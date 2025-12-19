@@ -135,6 +135,9 @@ body {
     font-size: 25px;
 }
 
+.container p{
+    margin: 0 0 10px 0;
+}
 
 .from-booking {
     padding: 20px;
