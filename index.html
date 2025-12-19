@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="nav-logo">
+                <a href="#">LAMPUNG POST</a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#"><i class="bi bi-house" style="font-size: 20px;"></i>Home</a></li>
+                <li><a href="#"><i class="bi bi-bookmark-plus" style="font-size: 20px;"></i>Booking</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <center>
+            <h2>LAMPOS BOOKING IKLAN</h2>
+        </center>
+        <div class="from-booking">
+            <form>
+
+                <div class="from-1">
+
+                    <fieldset class="field">
+                        <legend>Nama</legend>
+                        <i class="bi bi-person"></i>
+                        <input type="text" name="nama" required placeholder="Nama">
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>No Handphone</legend>
+                        <i class="bi bi-telephone-fill"></i>
+                        <input type="tel" name="no_hp" required placeholder="No Handphone">
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>NPWP</legend>
+                        <i class="bi bi-file-text"></i>
+                        <input type="text" name="npwp" placeholder="Npwp">
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Alamat</legend>
+                        <textarea name="alamat" rows="3"></textarea>
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Tanggal Publis</legend>
+                        <i class="bi bi-calendar-date-fill"></i>
+                        <input type="text" id="tanggalPublis" name="tanggal_publis" readonly placeholder="Tanggal Publis">
+                    </fieldset>
+
+
+                    <fieldset class="field">
+                        <legend>Penayangan</legend>
+                        <i class="bi bi-clock-history"></i>
+                        <input type="text" name="penayangan" placeholder="Penayangan">
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Judul</legend>
+                        <i class="bi bi-pencil-fill"></i>
+                        <input type="text" name="judul" placeholder="Judul">
+                    </fieldset>
+
+                </div>
+
+                <div class="from-2">
+
+                    <fieldset class="field">
+                        <legend>Isi Berita</legend>
+                        <textarea name="isi_berita" rows="5"></textarea>
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Foto</legend>
+                        <input type="file" name="foto">
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Alamat Penagihan</legend>
+                        <textarea name="alamat_penagihan" rows="3"></textarea>
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Instansi</legend>
+                        <select name="instansi">
+                            <option value="">Pilih Instansi</option>
+                            <option>Pemerintah Daerah</option>
+                            <option>BUMN</option>
+                            <option>BUMD</option>
+                            <option>Perusahaan Swasta</option>
+                            <option>Perorangan</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Penanggung Jawab</legend>
+                        <select name="nama_penanggung_jawab">
+                            <option value="">Pilih</option>
+                            <option>Direktur</option>
+                            <option>Manager</option>
+                            <option>Kepala Bagian</option>
+                            <option>Humas</option>
+                            <option>Admin</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Tempat Penagihan</legend>
+                        <i class="bi bi-geo-alt"></i>
+                        <input type="text" name="tempat_penagihan" placeholder="Tempat Penagihan">
+                    </fieldset>
+
+                </div>
+
+            </form>
+            <button class="button-submit" type="submit">Kirim</button>
+        </div>
+
+    </div>
+</body>
+<script>
+    flatpickr("#tanggalPublis", {
+        mode: "range",
+        dateFormat: "Y-m-d",
+        allowInput: false,
+    });
+</script>
+
+</html>

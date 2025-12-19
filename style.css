@@ -1,0 +1,241 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+    /* Hilangkan scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE & Edge lama */
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #000;
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+/* CONTAINER */
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: acme, sans-serif;
+}
+
+/* LOGO */
+.nav-logo a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;   /* sejajar vertikal */
+    gap: 3px;              /* jarak icon & teks */
+}
+
+/* ukuran icon */
+.material-symbols-outlined {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* hover underline */
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.container {
+    animation: slideUpSlow 2.8s ease-out forwards;
+    opacity: 0;
+    /* awal transparan */
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Keyframes animasi */
+@keyframes slideUpSlow {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    60% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h2 {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: bold;
+    margin: 15px 0 0 0;
+    color: #000;
+    font-size: 25px;
+}
+
+.from-booking {
+    padding: 20px;
+    height: 100%;
+}
+
+.from-booking form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-family: acme, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* kolom kiri & kanan */
+.from-1,
+.from-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* label */
+.from-booking label {
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+}
+
+.from-booking p {
+    margin: 0;
+}
+
+/* fieldset wrapper */
+.field {
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 3px
+}
+
+/* legend text di border */
+.field legend {
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* hapus border input di dalam */
+.field input,
+.field textarea,
+.field select {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* fokus tetap rapi */
+.field:focus-within {
+    border-color: #000;
+}
+
+/* hilangkan outline bawaan */
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+/* textarea lebih nyaman */
+.from-booking textarea {
+    resize: vertical;
+    min-height: 80px;
+    width: 100%;
+}
+
+.button-submit {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: calc(100% * 1);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.39);
+    height: 40px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    background-color: #5FB3AC ;
+    color: #ffff;
+    font-weight: bold;
+}
+
+/* responsive (mobile) */
+@media (max-width: 768px) {
+    .from-booking form {
+        flex-direction: column;
+    }
+}
