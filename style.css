@@ -245,4 +245,8 @@ body {
     .from-booking form {
         flex-direction: column;
     }
+    
+    .container p {
+        font-size: 12px;
+    }
 }
