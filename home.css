@@ -1,0 +1,241 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+    /* Hilangkan scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE & Edge lama */
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background: #2eada7;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    height: 65px;
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+/* CONTAINER */
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    height: 100%;
+}
+
+/* LOGO */
+.nav-logo a {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MENU */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* sejajar vertikal */
+    gap: 3px;
+    /* jarak icon & teks */
+}
+
+/* ukuran icon */
+.material-symbols-outlined {
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* hover underline */
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.container {
+    animation: slideUpSlow 2.8s ease-out forwards;
+    opacity: 0;
+    padding: 20px;
+}
+
+@keyframes slideUpSlow {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    60% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pastikan semua elemen termasuk padding dihitung dalam height */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    /* Hilangkan margin default yang bisa membuat konten meluber */
+}
+
+/* Container footer */
+.foouter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* dua kolom sama rata */
+    padding: 0 10px;
+    /* hanya horizontal padding */
+    height: calc(40vh - 65px);
+    /* tinggi foouter dikurangi navbar */
+    gap: 10px;
+    overflow: hidden;
+}
+
+/* Kolom kiri (teks) */
+.foouter-text {
+    /* vertical center teks */
+    height: 100%;
+    max-height: 100%;
+    /* jangan melebihi parent */
+    overflow: hidden;
+    /* cegah teks meluber */
+    text-overflow: ellipsis;
+    /* jika teks terlalu panjang */
+}
+
+/* Kolom kanan (gambar) */
+.foouter-img {
+    display: flex;
+    align-items: center;
+    /* vertical center gambar */
+    justify-content: flex-end;
+    /* gambar di kanan */
+    height: 100%;
+    max-height: 100%;
+    /* jangan melebihi parent */
+    overflow: hidden;
+    /* cegah gambar meluber */
+}
+
+/* Batasi ukuran gambar agar tetap di dalam kolom */
+.foouter-img img {
+    max-height: 100%;
+    /* tinggi maksimum sesuai parent */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.foouter-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    /* SUPER BOLD */
+    margin: 0;
+    color: #2eada7;
+    font-size: 35px;
+}
+
+.foouter-text p {
+    margin: 0;
+    font-size: 15px;
+    text-align: justify;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* =================== MEDIA QUERY =================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .foouter {
+        grid-template-columns: 1fr 1fr; /* tetap 2 kolom */
+        height: auto;                   /* tinggi menyesuaikan konten */
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .foouter-text {
+        font-size: 14px;                /* perkecil teks */
+        max-height: 100%;               
+        overflow: hidden;               
+    }
+
+    .foouter-img {
+        max-height: 100%;               
+        overflow: hidden;
+    }
+
+    .foouter-img img {
+        max-height: 120px;              /* batasi tinggi gambar */
+        width: auto;
+    }
+
+    .foouter-text h2 {
+    font-size: 12px;
+}
+
+.foouter-text p {
+    font-size: 8px;
+}
+}
+
+/* Untuk layar lebih kecil lagi */
+@media (max-width: 480px) {
+    .foouter-text {
+        font-size: 12px;
+    }
+}
