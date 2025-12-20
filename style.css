@@ -101,13 +101,6 @@ body {
 .container {
     animation: slideUpSlow 2.8s ease-out forwards;
     opacity: 0;
-    /* awal transparan */
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.1px);
-    -webkit-backdrop-filter: blur(5.1px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Keyframes animasi */
@@ -140,27 +133,32 @@ body {
 }
 
 .from-booking {
+    min-height: calc(100vh - 182px);
+    display: grid;
+    grid-template-rows: 1fr auto;
     padding: 20px;
-    height: 100%;
 }
 
 .from-booking form {
     display: flex;
     gap: 30px;
-    align-items: center;
+    align-items: stretch; /* penting */
     font-family: acme, sans-serif;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-/* kolom kiri & kanan */
 .from-1,
 .from-2 {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    height: 100%;
     width: 100%;
+}
+
+.from-1 > *:not(:last-child),
+.from-2 > *:not(:last-child) {
+    margin-bottom: auto;
 }
 
 /* label */
@@ -226,7 +224,6 @@ body {
 
 .button-submit {
     margin-top: 15px;
-    margin-bottom: 10px;
     width: calc(100% * 1);
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.39);
@@ -249,4 +246,9 @@ body {
     .container p {
         font-size: 12px;
     }
+
+    .from-1,
+.from-2 {
+    gap: 5px;
+}
 }
