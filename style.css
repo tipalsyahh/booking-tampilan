@@ -13,7 +13,6 @@ body {
     /* IE & Edge lama */
 }
 
-/* Chrome, Edge, Safari */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none;
@@ -23,7 +22,6 @@ body {
     background-color: #fff;
 }
 
-/* NAVBAR */
 .navbar {
     width: 100%;
     background: #2eada7;
@@ -35,9 +33,7 @@ body {
     z-index: 1000;
 }
 
-/* CONTAINER */
 .nav-container {
-    max-width: 1200px;
     margin: auto;
     padding: 0 20px;
     display: flex;
@@ -47,7 +43,6 @@ body {
     height: 100%;
 }
 
-/* LOGO */
 .nav-logo a {
     font-size: 15px;
     font-weight: bold;
@@ -55,7 +50,6 @@ body {
     text-decoration: none;
 }
 
-/* MENU */
 .nav-menu {
     list-style: none;
     display: flex;
@@ -72,17 +66,15 @@ body {
     color: #fff;
     position: relative;
     display: flex;
-    align-items: center;   /* sejajar vertikal */
-    gap: 3px;              /* jarak icon & teks */
+    align-items: center;
+    gap: 3px;
 }
 
-/* ukuran icon */
 .material-symbols-outlined {
     font-size: 18px;
     line-height: 1;
 }
 
-/* hover underline */
 .nav-menu li a::after {
     content: "";
     position: absolute;
@@ -103,7 +95,6 @@ body {
     opacity: 0;
 }
 
-/* Keyframes animasi */
 @keyframes slideUpSlow {
     0% {
         opacity: 0;
@@ -122,13 +113,13 @@ body {
 
 .container h2 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 900; /* SUPER BOLD */
+    font-weight: 900;
     margin: 15px 0 0 0;
     color: #000;
     font-size: 25px;
 }
 
-.container p{
+.container p {
     margin: 0 0 10px 0;
 }
 
@@ -142,7 +133,7 @@ body {
 .from-booking form {
     display: flex;
     gap: 30px;
-    align-items: stretch; /* penting */
+    align-items: stretch;
     font-family: acme, sans-serif;
     text-transform: uppercase;
     font-weight: bold;
@@ -156,12 +147,11 @@ body {
     width: 100%;
 }
 
-.from-1 > *:not(:last-child),
-.from-2 > *:not(:last-child) {
+.from-1>*:not(:last-child),
+.from-2>*:not(:last-child) {
     margin-bottom: auto;
 }
 
-/* label */
 .from-booking label {
     font-size: 14px;
     color: #000;
@@ -172,7 +162,6 @@ body {
     margin: 0;
 }
 
-/* fieldset wrapper */
 .field {
     border: 2px solid #000;
     border-radius: 10px;
@@ -182,7 +171,6 @@ body {
     gap: 3px
 }
 
-/* legend text di border */
 .field legend {
     padding: 0 6px;
     font-size: 12px;
@@ -190,7 +178,6 @@ body {
     color: #000;
 }
 
-/* hapus border input di dalam */
 .field input,
 .field textarea,
 .field select {
@@ -200,12 +187,10 @@ body {
     width: 100%;
 }
 
-/* fokus tetap rapi */
 .field:focus-within {
     border-color: #000;
 }
 
-/* hilangkan outline bawaan */
 .field input:focus,
 .field textarea:focus,
 .field select:focus {
@@ -213,9 +198,6 @@ body {
     box-shadow: none;
 }
 
-
-
-/* textarea lebih nyaman */
 .from-booking textarea {
     resize: vertical;
     min-height: 80px;
@@ -237,18 +219,17 @@ body {
     font-weight: bold;
 }
 
-/* responsive (mobile) */
 @media (max-width: 768px) {
     .from-booking form {
         flex-direction: column;
     }
-    
+
     .container p {
         font-size: 12px;
     }
 
     .from-1,
-.from-2 {
-    gap: 5px;
-}
+    .from-2 {
+        gap: 5px;
+    }
 }
