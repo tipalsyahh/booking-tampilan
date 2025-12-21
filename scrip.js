@@ -1,36 +1,70 @@
-const slides = document.querySelectorAll('.slide');
-const wrapper = document.querySelector('.slider__wrapper');
-const prevBtn = document.querySelector('.btn--previous');
-const nextBtn = document.querySelector('.btn--next');
+const canvas = document.getElementById('signature-pad');
+const ctx = canvas.getContext('2d');
 
-let current = 0;
+let drawing = false;
+let lastX = 0;
+let lastY = 0;
 
-function updateSlider() {
-  const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginLeft) + parseInt(getComputedStyle(slides[0]).marginRight);
-  
-  // Geser wrapper sehingga slide tengah berada di center
-  const wrapperWidth = wrapper.offsetWidth;
-  const offset = (slideWidth * current) - (wrapperWidth/2 - slideWidth/2);
-  wrapper.style.transform = `translateX(-${offset}px)`;
-  
-  // Update class slide
-  slides.forEach((slide, index) => {
-    slide.classList.remove('slide--current', 'slide--next', 'slide--previous');
-    if(index === current) slide.classList.add('slide--current');
-    else if(index < current) slide.classList.add('slide--previous');
-    else slide.classList.add('slide--next');
-  });
+/* Mulai menggambar */
+function startDraw(x, y) {
+    drawing = true;
+    lastX = x;
+    lastY = y;
 }
 
-// Tombol next/prev
-prevBtn.addEventListener('click', () => {
-  current = (current - 1 + slides.length) % slides.length;
-  updateSlider();
+/* Menggambar */
+function draw(x, y) {
+    if (!drawing) return;
+
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#000';
+
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+
+    lastX = x;
+    lastY = y;
+}
+
+/* Berhenti menggambar */
+function endDraw() {
+    drawing = false;
+}
+
+/* Mouse */
+canvas.addEventListener('mousedown', e => {
+    startDraw(e.offsetX, e.offsetY);
 });
 
-nextBtn.addEventListener('click', () => {
-  current = (current + 1) % slides.length;
-  updateSlider();
+canvas.addEventListener('mousemove', e => {
+    draw(e.offsetX, e.offsetY);
 });
 
-updateSlider(); // inisialisasi
+canvas.addEventListener('mouseup', endDraw);
+canvas.addEventListener('mouseleave', endDraw);
+
+/* Touch (HP) */
+canvas.addEventListener('touchstart', e => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    startDraw(
+        touch.clientX - rect.left,
+        touch.clientY - rect.top
+    );
+});
+
+canvas.addEventListener('touchmove', e => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    draw(
+        touch.clientX - rect.left,
+        touch.clientY - rect.top
+    );
+});
+
+canvas.addEventListener('touchend', endDraw);

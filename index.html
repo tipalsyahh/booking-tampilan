@@ -68,11 +68,22 @@
                             placeholder="Tanggal Publis">
                     </fieldset>
 
-
                     <fieldset class="field">
                         <legend>Penayangan</legend>
                         <i class="bi bi-clock-history"></i>
                         <input type="text" name="penayangan" placeholder="Penayangan">
+                    </fieldset>
+
+                    <fieldset class="field">
+                        <legend>Instansi</legend>
+                        <select name="instansi">
+                            <option value="">Pilih Instansi</option>
+                            <option>Pemerintah Daerah</option>
+                            <option>BUMN</option>
+                            <option>BUMD</option>
+                            <option>Perusahaan Swasta</option>
+                            <option>Perorangan</option>
+                        </select>
                     </fieldset>
 
                     <fieldset class="field">
@@ -101,18 +112,6 @@
                     </fieldset>
 
                     <fieldset class="field">
-                        <legend>Instansi</legend>
-                        <select name="instansi">
-                            <option value="">Pilih Instansi</option>
-                            <option>Pemerintah Daerah</option>
-                            <option>BUMN</option>
-                            <option>BUMD</option>
-                            <option>Perusahaan Swasta</option>
-                            <option>Perorangan</option>
-                        </select>
-                    </fieldset>
-
-                    <fieldset class="field">
                         <legend>Penanggung Jawab</legend>
                         <select name="nama_penanggung_jawab">
                             <option value="">Pilih</option>
@@ -130,8 +129,17 @@
                         <input type="text" name="tempat_penagihan" placeholder="Tempat Penagihan">
                     </fieldset>
 
+                    <fieldset class="field">
+                        <legend>Tanda tangan</legend>
+                        <div class="signature-wrapper">
+                            <canvas id="signature-pad" width="400" height="200" canvas>
+                                <div class="signature-action">
+                                    <button type="button" id="clearSignature">Hapus</button>
+                                </div>
+                                <input type="hidden" name="tanda_tangan" id="signatureInput">
+                        </div>
+                    </fieldset>
                 </div>
-
             </form>
             <button class="button-submit" type="submit">Kirim</button>
         </div>
@@ -145,5 +153,6 @@
         allowInput: false,
     });
 </script>
+<script src="scrip.js"></script>
 
 </html>
