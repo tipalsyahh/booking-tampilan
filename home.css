@@ -240,6 +240,69 @@ body {
     width: 100%;
 }
 
+.daftar-harga {
+    padding: 10px;
+}
+
+.cart-harga {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.card-harga {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.397);
+    transition: 0.3s;
+}
+
+.card-harga:hover {
+    transform: translateY(-6px);
+}
+
+.card-harga h3 {
+    margin-bottom: 10px;
+}
+
+.card-harga .harga {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card-harga ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.card-harga ul li {
+    margin: 6px 0;
+}
+
+.btn-harga {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #2eada7;
+    color: #2eada7;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.btn-harga:hover {
+    background: #333;
+}
+
+.card-harga a i {
+    margin-right: 5px;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;
