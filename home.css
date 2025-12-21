@@ -333,11 +333,11 @@ body {
     }
 
     .foouter-text h2 {
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .foouter-text p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .menu-icon {
@@ -355,7 +355,7 @@ body {
         font-size: 18px;
     }
     
-    .card-harga ul {
+    .card-harga ul li {
         font-size: 12px;
     }
 }
