@@ -46,6 +46,11 @@ body {
     text-decoration: none;
 }
 
+.nav-logo a img {
+    width: 120px;
+    height: 40px;
+}
+
 .nav-menu {
     list-style: none;
     display: flex;
