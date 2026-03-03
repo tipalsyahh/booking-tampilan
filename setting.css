@@ -1,0 +1,278 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: min(100%, 900px);
+    margin: 0 auto;
+    min-height: calc(100vh * 0.70);
+
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 33%);
+
+    background: rgba(255, 255, 255, 0.85);
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.from {
+    width: 100%;
+    min-height: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(6.9px);
+    border-radius: 10px;
+}
+
+.profile-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* gambar profile */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* huruf default */
+.profile-initial {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* icon kamera */
+.camera-icon-wrapper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    background-color: #2f2f2f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.camera-icon-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.camera-icon {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+}
+
+.file-input {
+    display: none;
+}
+
+.dropdown-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.dropdown-btn {
+    gap: 10px;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    font-weight: bold;
+    position: relative;
+    overflow: visible;
+}
+
+.dropdown-btn:hover {
+    z-index: 10;
+    transform: translateY(-3px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12),
+        0 8px 20px rgba(0, 0, 0, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dropdown-btn::before,
+.dropdown-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #d10000;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.dropdown-btn::before {
+    top: -6px;
+}
+
+.dropdown-btn::after {
+    bottom: -6px;
+}
+
+.dropdown-btn:hover::before {
+    animation: lineTopLeftFade 0.7s ease forwards;
+}
+
+.dropdown-btn:hover::after {
+    animation: lineBottomRightFade 0.7s ease forwards;
+}
+
+@keyframes lineTopLeftFade {
+    0% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes lineBottomRightFade {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+
+#arrowIcon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-content.active {
+    max-height: 400px;
+    padding: 15px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: #f3f3f3;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.input-wrapper:focus-within {
+    border-color: #DC0000;
+    box-shadow: 0 0 0 2px rgba(220, 0, 0, 0.1);
+}
+
+.input-icon {
+    font-size: 18px;
+    color: #000;
+}
+
+.input-divider {
+    width: 2px;
+    height: 20px;
+    background: #000;
+    margin: 0 10px;
+}
+
+.input-wrapper .form-input {
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #DC0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #b80000;
+}
