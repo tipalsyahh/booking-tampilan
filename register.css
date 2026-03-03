@@ -17,8 +17,7 @@ body {
 
 .container {
     width: min(100%, 900px);
-    min-height: 70dvh;
-
+    height: calc(100vh * 0.90);
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0 4px 30px rgb(0 0 0 / 33%);
@@ -34,7 +33,8 @@ body {
 
 .from {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    box-sizing: border-box;
     padding: 15px;
     background: rgba(255, 255, 255, 0.28);
     backdrop-filter: blur(6.9px);
@@ -42,11 +42,12 @@ body {
 }
 
 .img-register {
-    width: 350px;
+    height: calc(100vh * 0.35);
 }
 
 .form-box {
     width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group {
@@ -93,8 +94,8 @@ body {
     padding: 12px;
     border: none;
     border-radius: 50px;
-    background: #ccc;
-    color: #000;
+    background: #DC0000;
+    color: #fff;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -107,7 +108,7 @@ body {
 
 .reminder-item {
     width: 100%;
-    padding: 18px 15px;
+    padding: 10px 15px;
     border-radius: 12px;
     display: flex;
     justify-content: space-between;
@@ -158,11 +159,15 @@ body {
 
 /* Active */
 .switch input:checked + .slider {
-    background-color: #0f3b53;
+    background-color: #DC0000;
 }
 
 .switch input:checked + .slider::before {
     transform: translateX(24px);
+}
+
+.container h2 {
+    margin: 0 0 10px 0;
 }
 
 @media (max-width: 894px) {

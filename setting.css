@@ -224,7 +224,7 @@ body {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 50px;
     padding: 0 10px;
     box-sizing: border-box;
     background: #f3f3f3;
@@ -264,13 +264,9 @@ body {
     background-color: #DC0000;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #b80000;
 }
 
 .typing-wrapper {
