@@ -126,8 +126,6 @@ body {
 .dropdown-btn:hover {
     z-index: 10;
     transform: translateY(-3px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12),
-        0 8px 20px rgba(0, 0, 0, 0.10);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -273,6 +271,26 @@ body {
 
 .submit-btn:hover {
     background-color: #b80000;
+}
+
+.typing-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+#typingText {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.from {
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
 @media (max-width: 894px) {

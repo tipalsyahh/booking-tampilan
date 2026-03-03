@@ -15,7 +15,10 @@
 
 <body>
     <div class="container">
-        <div class="from">
+        <div class="typing-wrapper">
+            <h1 id="typingText"></h1>
+        </div>
+        <div class="from" id="mainForm" style="display: none;">
             <center>
                 <div class="profile-container">
                     <div class="profile-avatar">
@@ -88,6 +91,31 @@
                     arrow.classList.add("bi-arrow-bar-down");
                 }
             }
+        </script>
+        <script>
+            const text = "Setting account e-paper premium lampost";
+            const typingElement = document.getElementById("typingText");
+            const form = document.getElementById("mainForm");
+
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    typingElement.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 80);
+                } else {
+                    setTimeout(() => {
+                        document.querySelector(".typing-wrapper").style.display = "none";
+                        form.style.display = "block";
+                        setTimeout(() => {
+                            form.style.opacity = "1";
+                        }, 50);
+                    }, 600);
+                }
+            }
+
+            window.onload = typeEffect;
         </script>
 </body>
 
