@@ -275,7 +275,7 @@ body {
     background-color: #b80000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 894px) {
     .container {
         box-shadow: none;
     }
