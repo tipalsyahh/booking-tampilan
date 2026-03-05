@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 .title {
@@ -46,7 +46,6 @@ body {
     box-shadow: 0 4px 30px rgb(0 0 0 / 33%);
     transition: 0.3s;
     border: 2px solid transparent;
-    cursor: pointer;
 }
 
 .card:hover {
@@ -125,7 +124,6 @@ body {
     gap: 20px;
     padding: 10px;
     width: 360px;
-    cursor: pointer;
     height: 220px;
     border-radius: 10px;
     background: white;
@@ -184,10 +182,19 @@ body {
     box-sizing: border-box;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
 }
 
 @media (max-width: 894px) {
     .card {
-        width: 400px;
+        width: 360px;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+
+    .title h3 {
+        font-size: 15px;
     }
 }
