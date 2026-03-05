@@ -39,13 +39,14 @@ body {
 }
 
 .card {
-    width: 260px;
+    width: 280px;
     background: white;
     border-radius: 14px;
     padding: 10px 20px;
     box-shadow: 0 4px 30px rgb(0 0 0 / 33%);
     transition: 0.3s;
     border: 2px solid transparent;
+    box-sizing:border-box;
 }
 
 .card:hover {
@@ -78,7 +79,7 @@ body {
 }
 
 .price {
-    font-size: 28px;
+    font-size: 23px;
     font-weight: bold;
     color: #1c2c4c;
     margin: 10px 0;
@@ -138,6 +139,10 @@ body {
     transition: 0.3s;
     overflow: hidden;
     align-items: center;
+}
+
+.feature-box h3 {
+    margin: 0;
 }
 
 .feature-box p {
